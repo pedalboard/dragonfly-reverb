@@ -32,7 +32,7 @@ index 5f682b5..3c0c278 100644
 '''
 
 ```
-docker run --rm  -v ".:/src" -w /src  elk-audio-os-builder sh -c ". /opt/elk/1.0.0/environment-setup-cortexa72-elk-linux && make"
+docker run --rm  -v ".:/src" -w /src  elk-audio-os-builder sh -c "sudo apt-get install qemu-user-static && . /opt/elk/1.0.0/environment-setup-cortexa72-elk-linux && make EXE_WRAPPER='qemu-aarch64-static -L /opt/elk/1.0.0/sysroots/cortexa72-elk-linux'"
 ```
 
 
