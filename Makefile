@@ -53,3 +53,9 @@ clean:
 # --------------------------------------------------------------
 
 .PHONY: plugins
+
+release:
+	tar -C bin -xvzf bin/DragonflyRoomReverb.lv2.tar.gz DragonflyRoomReverb.lv2
+	gh release create --latest --generate-notes $$(git describe --tags --abbrev=0) ./bin/DragonflyRoomReverb.lv2.tar.gz
+
+
